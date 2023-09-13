@@ -83,7 +83,18 @@ flutter:
         - asset: assets/fonts/MPLUSRounded1c-Regular.ttf
         - asset: assets/fonts/MPLUSRounded1c-Regular.ttf
           style: italic
-   
+    - family: Nunito 
+      fonts: 
+        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/Nunito-Medium.ttf
+        - asset: assets/fonts/Nunito-Regular.ttf
+          style: italic
+    - family: Markazi 
+      fonts: 
+        - asset: assets/fonts/MarkaziText-Bold.ttf
+        - asset: assets/fonts/MarkaziText-Medium.ttf
+        - asset: assets/fonts/MarkaziText-Regular.ttf
+          style: italic
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
