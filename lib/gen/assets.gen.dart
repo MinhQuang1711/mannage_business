@@ -20,6 +20,10 @@ class $AssetsIconsGen {
   AssetGenImage get backLight =>
       const AssetGenImage('assets/icons/Back_light.png');
 
+  /// File path: assets/icons/Bag_light.png
+  AssetGenImage get bagLight =>
+      const AssetGenImage('assets/icons/Bag_light.png');
+
   /// File path: assets/icons/Basket_alt_3_light.png
   AssetGenImage get basketAlt3Light =>
       const AssetGenImage('assets/icons/Basket_alt_3_light.png');
@@ -28,22 +32,38 @@ class $AssetsIconsGen {
   AssetGenImage get expandUpLight =>
       const AssetGenImage('assets/icons/Expand_up_light.png');
 
+  /// File path: assets/icons/Home_light.png
+  AssetGenImage get homeLight =>
+      const AssetGenImage('assets/icons/Home_light.png');
+
   /// File path: assets/icons/Search_light.png
   AssetGenImage get searchLight =>
       const AssetGenImage('assets/icons/Search_light.png');
+
+  /// File path: assets/icons/Time_light.png
+  AssetGenImage get timeLight =>
+      const AssetGenImage('assets/icons/Time_light.png');
 
   /// File path: assets/icons/Trash_light.png
   AssetGenImage get trashLight =>
       const AssetGenImage('assets/icons/Trash_light.png');
 
+  /// File path: assets/icons/User_light.png
+  AssetGenImage get userLight =>
+      const AssetGenImage('assets/icons/User_light.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         addLight,
         backLight,
+        bagLight,
         basketAlt3Light,
         expandUpLight,
+        homeLight,
         searchLight,
-        trashLight
+        timeLight,
+        trashLight,
+        userLight
       ];
 }
 
