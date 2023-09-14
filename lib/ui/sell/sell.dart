@@ -91,9 +91,9 @@ class _SellPageState extends State<SellPage> {
   }
 
   void _onLess(Product value) {
-    Product? product =
-        productList.firstWhere((element) => element.name == value.name);
-    productsSelected.remove(product);
+    int index = productsSelected.indexOf(
+        productsSelected.firstWhere((element) => element.name == value.name));
+    productsSelected = List.from(productsSelected)..removeAt(index);
     setState(() {});
   }
 
@@ -136,15 +136,11 @@ class _SellPageState extends State<SellPage> {
                   onTap: _onTap,
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 10),
+            BottomPayment(productList: productsSelected),
           ],
         ),
-        Positioned(
-          bottom: 5,
-          left: 0,
-          right: 0,
-          child: BottomPayment(productList: productsSelected),
-        )
       ],
     );
   }
