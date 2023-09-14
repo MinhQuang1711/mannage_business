@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/domains/models/products.dart';
+import 'package:mannager_business/ultils/extensions/money.dart';
 import 'package:mannager_business/widget/cards/base_cards.dart';
 
 import '../../../const/colors/business_colors.dart';
@@ -58,7 +59,7 @@ class _ProductCardState extends State<ProductCard> {
                 ),
                 const Spacer(),
                 Text(
-                  "${widget.product.price.toString()} đ",
+                  "${widget.product.price?.toMoney()} đ",
                   style: captionMedium,
                 )
               ],
