@@ -10,13 +10,16 @@ class CustomTextField extends ITextFields {
   BaseTextFields outline({
     bool? obs,
     String? hintText,
+    Widget? prefIcon,
+    double? borderRadius,
     Function(String?)? onChanged,
     TextEditingController? controller,
     String? Function(String?)? validate,
   }) {
-    OutlineInputBorder _outlineInputs(Color? borderColor) {
+    OutlineInputBorder _outlineInputs(Color? borderColor,
+        {double? borderRadius}) {
       return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(borderRadius ?? 8),
         borderSide: BorderSide(
           width: 0.7,
           color: borderColor ?? BusinessColors.dark,
@@ -28,9 +31,10 @@ class CustomTextField extends ITextFields {
       obs: obs,
       hintText: hintText,
       validate: validate,
+      prefWidget: prefIcon,
       onChanged: onChanged,
       controller: controller,
-      border: _outlineInputs(null),
+      border: _outlineInputs(null, borderRadius: borderRadius),
       errorBorder: _outlineInputs(BusinessColors.red),
       focusBorder: _outlineInputs(BusinessColors.blue),
     );
@@ -39,6 +43,7 @@ class CustomTextField extends ITextFields {
   @override
   BaseTextFields underLine({
     String? hintText,
+    Widget? sufIcon,
     required String lable,
     TextEditingController? controller,
     String? Function(String? p1)? validate,
@@ -54,6 +59,7 @@ class CustomTextField extends ITextFields {
 
     return BaseTextFields(
       lable: lable,
+      sufWidget: sufIcon,
       hintText: hintText,
       validate: validate,
       controller: controller,
