@@ -40,7 +40,7 @@ class BaseTextFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const padding = EdgeInsets.symmetric(horizontal: 10, vertical: 12);
+    const padding = EdgeInsets.symmetric(horizontal: 10, vertical: 10);
     TextStyle getStyle(Color? color) {
       return detailRegular.copyWith(
         color: color ?? BusinessColors.dark,
@@ -54,6 +54,7 @@ class BaseTextFields extends StatelessWidget {
       onChanged: onChanged,
       onTap: onTap,
       decoration: InputDecoration(
+        isDense: true,
         border: border,
         hintText: hintText,
         suffixIcon: sufWidget,

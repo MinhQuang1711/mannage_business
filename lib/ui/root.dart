@@ -51,6 +51,7 @@ class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 251, 251, 251),
       body: IndexedStack(
         index: _currentIndex,
         children: _tabs,

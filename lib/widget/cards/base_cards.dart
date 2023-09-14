@@ -36,16 +36,20 @@ class BaseCard extends StatelessWidget {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             suffWidget ?? const SizedBox(),
-            const SizedBox(width: 15),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                title ?? const SizedBox(),
-                descriptions ?? const SizedBox(),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  title ?? const SizedBox(),
+                  descriptions ?? const SizedBox(),
+                ],
+              ),
             )
           ],
         ),

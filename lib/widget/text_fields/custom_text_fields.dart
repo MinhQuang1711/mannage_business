@@ -10,6 +10,7 @@ class CustomTextField extends ITextFields {
   BaseTextFields outline({
     bool? obs,
     String? hintText,
+    Widget? prefIcon,
     Function(String?)? onChanged,
     TextEditingController? controller,
     String? Function(String?)? validate,
@@ -28,6 +29,7 @@ class CustomTextField extends ITextFields {
       obs: obs,
       hintText: hintText,
       validate: validate,
+      prefWidget: prefIcon,
       onChanged: onChanged,
       controller: controller,
       border: _outlineInputs(null),
@@ -39,6 +41,7 @@ class CustomTextField extends ITextFields {
   @override
   BaseTextFields underLine({
     String? hintText,
+    Widget? sufIcon,
     required String lable,
     TextEditingController? controller,
     String? Function(String? p1)? validate,
@@ -54,6 +57,7 @@ class CustomTextField extends ITextFields {
 
     return BaseTextFields(
       lable: lable,
+      sufWidget: sufIcon,
       hintText: hintText,
       validate: validate,
       controller: controller,
