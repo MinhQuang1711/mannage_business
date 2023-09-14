@@ -52,6 +52,12 @@ class $AssetsIconsGen {
   AssetGenImage get userLight =>
       const AssetGenImage('assets/icons/User_light.png');
 
+  /// File path: assets/icons/add.png
+  AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
+
+  /// File path: assets/icons/less.png
+  AssetGenImage get less => const AssetGenImage('assets/icons/less.png');
+
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
 
@@ -67,6 +73,8 @@ class $AssetsIconsGen {
         timeLight,
         trashLight,
         userLight,
+        add,
+        less,
         search
       ];
 }
@@ -74,11 +82,19 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/ame_chanh.jpg
+  AssetGenImage get ameChanh =>
+      const AssetGenImage('assets/images/ame_chanh.jpg');
+
+  /// File path: assets/images/passion_chia.jpg
+  AssetGenImage get passionChia =>
+      const AssetGenImage('assets/images/passion_chia.jpg');
+
   /// File path: assets/images/product.jpg
   AssetGenImage get product => const AssetGenImage('assets/images/product.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [product];
+  List<AssetGenImage> get values => [ameChanh, passionChia, product];
 }
 
 class Assets {

@@ -33,8 +33,26 @@ class _SellPageState extends State<SellPage> {
     Product(
       price: 50000,
       name: "Oloong Mango tea",
-      imageUrl: "assets/images/product.jpg",
+      imageUrl: Assets.images.product.keyName,
       description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Lemon Americano",
+      imageUrl: Assets.images.ameChanh.keyName,
+      description: "Lemon, Coffee",
+    ),
+    Product(
+      price: 50000,
+      name: "PassionChia",
+      imageUrl: Assets.images.passionChia.keyName,
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Lemon Americano",
+      imageUrl: Assets.images.ameChanh.keyName,
+      description: "Lemon, Coffee",
     ),
     Product(
       price: 50000,
@@ -44,27 +62,9 @@ class _SellPageState extends State<SellPage> {
     ),
     Product(
       price: 50000,
-      name: "Oloong Mango tea",
-      imageUrl: "assets/images/product.jpg",
-      description: "Mango, ginger, oloong tea",
-    ),
-    Product(
-      price: 50000,
-      name: "Oloong Mango tea",
-      imageUrl: "assets/images/product.jpg",
-      description: "Mango, ginger, oloong tea",
-    ),
-    Product(
-      price: 50000,
-      name: "Oloong Mango tea",
-      imageUrl: "assets/images/product.jpg",
-      description: "Mango, ginger, oloong tea",
-    ),
-    Product(
-      price: 50000,
-      name: "Oloong Mango tea",
-      imageUrl: "assets/images/product.jpg",
-      description: "Mango, ginger, oloong tea",
+      name: "Lemon Americano",
+      imageUrl: Assets.images.ameChanh.keyName,
+      description: "Lemon, Coffee",
     ),
     Product(
       price: 50000,
@@ -85,6 +85,18 @@ class _SellPageState extends State<SellPage> {
       description: "Mango, ginger, oloong tea",
     ),
   ];
+  void _onTap(Product value) {
+    productsSelected.add(value);
+    setState(() {});
+  }
+
+  void _onLess(Product value) {
+    Product? product =
+        productList.firstWhere((element) => element.name == value.name);
+    productsSelected.remove(product);
+    setState(() {});
+  }
+
   List<Product> productsSelected = [];
 
   @override
@@ -118,17 +130,21 @@ class _SellPageState extends State<SellPage> {
             Expanded(
               child: BusinessListView<Product>(
                 items: productList,
-                child: SellListView(productList: productList),
+                child: SellListView(
+                  productList: productList,
+                  onLess: _onLess,
+                  onTap: _onTap,
+                ),
               ),
             )
           ],
         ),
-        productsSelected.isNotEmpty
-            ? AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                child: BottomPayment(productList: productsSelected),
-              )
-            : const SizedBox(),
+        Positioned(
+          bottom: 5,
+          left: 0,
+          right: 0,
+          child: BottomPayment(productList: productsSelected),
+        )
       ],
     );
   }

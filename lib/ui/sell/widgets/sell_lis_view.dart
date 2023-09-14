@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/domains/models/products.dart';
-import 'package:mannager_business/widget/cards/card.dart';
+import 'package:mannager_business/ui/sell/widgets/product_card.dart';
 
 class SellListView extends StatelessWidget {
   const SellListView({
     super.key,
     this.controller,
+    required this.onLess,
+    required this.onTap,
     required this.productList,
   });
+  final Function(Product) onTap;
+  final Function(Product) onLess;
   final List<Product> productList;
   final ScrollController? controller;
   @override
@@ -18,7 +22,11 @@ class SellListView extends StatelessWidget {
       itemCount: productList.length,
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
-        child: BusinessCard().products(productList[index]),
+        child: ProductCard(
+          product: productList[index],
+          onLess: () => onLess(productList[index]),
+          onTap: () => onTap(productList[index]),
+        ),
       ),
     );
   }

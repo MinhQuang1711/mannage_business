@@ -62,7 +62,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
-    - assets/images/product.jpg
+    - assets/images/
     
 
 
