@@ -52,6 +52,9 @@ class $AssetsIconsGen {
   AssetGenImage get userLight =>
       const AssetGenImage('assets/icons/User_light.png');
 
+  /// File path: assets/icons/search.png
+  AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         addLight,
@@ -63,14 +66,26 @@ class $AssetsIconsGen {
         searchLight,
         timeLight,
         trashLight,
-        userLight
+        userLight,
+        search
       ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/product.jpg
+  AssetGenImage get product => const AssetGenImage('assets/images/product.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [product];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {

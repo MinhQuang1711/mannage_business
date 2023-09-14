@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
+import 'package:mannager_business/const/text_style/text_style.dart';
+import 'package:mannager_business/domains/models/products.dart';
+import 'package:mannager_business/gen/assets.gen.dart';
+import 'package:mannager_business/ui/sell/widgets/bottom_payment.dart';
+import 'package:mannager_business/ui/sell/widgets/sell_lis_view.dart';
+import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
+import 'package:mannager_business/widget/list_views/list_view.dart';
+
 import 'package:mannager_business/widget/text_fields/custom_text_fields.dart';
 
 class Sell extends StatelessWidget {
@@ -9,28 +17,119 @@ class Sell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 13),
-      child: Column(
-        children: [
-          CustomTextField().underLine(
-            lable: 'Sản phẩm',
-            hintText: "Tìm kiếm sản phẩm",
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 15),
-            child: Divider(
-              color: BusinessColors.lightBlue,
-              thickness: 1,
-            ),
-          )
-        ],
+      child: const SellPage(),
+    );
+  }
+}
+
+class SellPage extends StatefulWidget {
+  const SellPage({super.key});
+  @override
+  State<SellPage> createState() => _SellPageState();
+}
+
+class _SellPageState extends State<SellPage> {
+  final List<Product> productList = [
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+    Product(
+      price: 50000,
+      name: "Oloong Mango tea",
+      imageUrl: "assets/images/product.jpg",
+      description: "Mango, ginger, oloong tea",
+    ),
+  ];
+  List<Product> productsSelected = [];
+
+  @override
+  Widget build(BuildContext context) {
+    const decoration = BoxDecoration(
+      border: Border(
+        bottom: BorderSide(color: BusinessColors.dark),
       ),
-      // child: BusinessCard().products(
-      //   Product(
-      //       imageUrl: "assets/images/product.jpg",
-      //       name: "Olong mango tea",
-      //       description: "Ginger,mango, olong tea",
-      //       price: 55000),
-      // ),
+    );
+    return Stack(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomTextField().outline(
+              borderRadius: 18,
+              hintText: "Tìm kiếm sản phẩm",
+              prefIcon: BusinessIcon(
+                assetGenImage: Assets.icons.search,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              decoration: decoration,
+              child: const Text(
+                "Kết quả tìm kiếm",
+                style: bodyMedium,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: BusinessListView<Product>(
+                items: productList,
+                child: SellListView(productList: productList),
+              ),
+            )
+          ],
+        ),
+        productsSelected.isNotEmpty
+            ? AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                child: BottomPayment(productList: productsSelected),
+              )
+            : const SizedBox(),
+      ],
     );
   }
 }

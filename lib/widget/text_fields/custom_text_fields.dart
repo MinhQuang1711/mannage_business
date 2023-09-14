@@ -11,13 +11,15 @@ class CustomTextField extends ITextFields {
     bool? obs,
     String? hintText,
     Widget? prefIcon,
+    double? borderRadius,
     Function(String?)? onChanged,
     TextEditingController? controller,
     String? Function(String?)? validate,
   }) {
-    OutlineInputBorder _outlineInputs(Color? borderColor) {
+    OutlineInputBorder _outlineInputs(Color? borderColor,
+        {double? borderRadius}) {
       return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(borderRadius ?? 8),
         borderSide: BorderSide(
           width: 0.7,
           color: borderColor ?? BusinessColors.dark,
@@ -32,7 +34,7 @@ class CustomTextField extends ITextFields {
       prefWidget: prefIcon,
       onChanged: onChanged,
       controller: controller,
-      border: _outlineInputs(null),
+      border: _outlineInputs(null, borderRadius: borderRadius),
       errorBorder: _outlineInputs(BusinessColors.red),
       focusBorder: _outlineInputs(BusinessColors.blue),
     );

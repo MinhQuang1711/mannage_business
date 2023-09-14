@@ -11,7 +11,7 @@ class BusinessCard extends Icard {
     return BaseCard(
       suffWidget: BusinessImage(assetName: product.imageUrl ?? ""),
       title: Container(
-        padding: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

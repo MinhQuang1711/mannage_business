@@ -12,4 +12,10 @@ class FontFamily {
 
   /// Font family: MPLUS
   static const String mplus = 'MPLUS';
+
+  /// Font family: Markazi
+  static const String markazi = 'Markazi';
+
+  /// Font family: Nunito
+  static const String nunito = 'Nunito';
 }

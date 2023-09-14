@@ -42,7 +42,7 @@ class BaseTextFields extends StatelessWidget {
   Widget build(BuildContext context) {
     const padding = EdgeInsets.symmetric(horizontal: 10, vertical: 10);
     TextStyle getStyle(Color? color) {
-      return detailRegular.copyWith(
+      return captionRegular.copyWith(
         color: color ?? BusinessColors.dark,
       );
     }
