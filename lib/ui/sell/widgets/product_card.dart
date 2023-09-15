@@ -67,7 +67,7 @@ class _ProductCardState extends State<ProductCard> {
                 ),
                 const Spacer(),
                 Text(
-                  "${widget.product.price?.toMoney()} đ",
+                  widget.product.price?.toMoney() ?? "0",
                   style: captionMedium,
                 )
               ],
