@@ -44,6 +44,11 @@ class _OrderPageState extends State<OrderPage> {
   }
 
   @override
+  void didUpdateWidget(covariant OrderPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void initState() {
     super.initState();
     _withOutDuplicate();

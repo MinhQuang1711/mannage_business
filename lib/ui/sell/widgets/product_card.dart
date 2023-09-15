@@ -52,6 +52,7 @@ class _ProductCardState extends State<ProductCard>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BaseCard(
       onTap: _onTap,
       suffWidget: BusinessImage(assetName: widget.product.imageUrl ?? ""),

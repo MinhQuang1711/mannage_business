@@ -86,15 +86,29 @@ class $AssetsImagesGen {
   AssetGenImage get ameChanh =>
       const AssetGenImage('assets/images/ame_chanh.jpg');
 
+  /// File path: assets/images/latte.jpg
+  AssetGenImage get latte => const AssetGenImage('assets/images/latte.jpg');
+
+  /// File path: assets/images/matcha.jpg
+  AssetGenImage get matcha => const AssetGenImage('assets/images/matcha.jpg');
+
+  /// File path: assets/images/original_coldbrew.jpg
+  AssetGenImage get originalColdbrew =>
+      const AssetGenImage('assets/images/original_coldbrew.jpg');
+
   /// File path: assets/images/passion_chia.jpg
   AssetGenImage get passionChia =>
       const AssetGenImage('assets/images/passion_chia.jpg');
+
+  /// File path: assets/images/pig_cat.jpg
+  AssetGenImage get pigCat => const AssetGenImage('assets/images/pig_cat.jpg');
 
   /// File path: assets/images/product.jpg
   AssetGenImage get product => const AssetGenImage('assets/images/product.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [ameChanh, passionChia, product];
+  List<AssetGenImage> get values =>
+      [ameChanh, latte, matcha, originalColdbrew, passionChia, pigCat, product];
 }
 
 class Assets {
