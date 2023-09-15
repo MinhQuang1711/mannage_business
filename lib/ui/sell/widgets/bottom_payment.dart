@@ -9,49 +9,60 @@ class BottomPayment extends StatelessWidget {
   const BottomPayment({
     super.key,
     this.onTap,
+    required this.onDelete,
     required this.productList,
   });
   final List<Product> productList;
   final Function()? onTap;
+  final Function() onDelete;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.translucent,
-      onTap: onTap,
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 100),
-        transitionBuilder: (child, animation) => ScaleTransition(
-          scale: animation,
-          child: child,
+    return Dismissible(
+      key: UniqueKey(),
+      onDismissed: (direction) {
+        onDelete();
+      },
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: onTap,
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 100),
+          transitionBuilder: (child, animation) => ScaleTransition(
+            scale: animation,
+            child: child,
+          ),
+          child:
+              productList.isNotEmpty ? _child(productList) : const SizedBox(),
         ),
-        child: productList.isNotEmpty ? _child(productList) : const SizedBox(),
       ),
     );
   }
-}
 
-Widget _child(List<Product> productList) {
-  return Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(8),
-      color: BusinessColors.darkBlue,
-    ),
-    padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 15),
-    child: Row(
-      children: [
-        Text(
-          "${productList.length} Món",
-          style: captionRegular.copyWith(color: BusinessColors.white),
-        ),
-        const Spacer(),
-        Text(
-          "Tổng thanh toán: ",
-          style: captionRegular.copyWith(color: BusinessColors.white),
-        ),
-        Text(productList.getTotalPrice().toMoney(),
-            style: captionMedium.copyWith(color: BusinessColors.white)),
-      ],
-    ),
-  );
+  Widget _child(List<Product> productList) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: BusinessColors.darkBlue,
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 15),
+      child: Row(
+        children: [
+          Text(
+            "${productList.length} Món",
+            style: captionRegular.copyWith(color: BusinessColors.white),
+          ),
+          const Spacer(),
+          Text(
+            "Tổng thanh toán: ",
+            style: captionRegular.copyWith(color: BusinessColors.white),
+          ),
+          Text(
+            productList.getTotalPrice().toMoney(),
+            style: captionMedium.copyWith(color: BusinessColors.white),
+          ),
+        ],
+      ),
+    );
+  }
 }

@@ -30,6 +30,7 @@ class SellPage extends StatefulWidget {
 }
 
 class _SellPageState extends State<SellPage> {
+  int? _quantity;
   final List<Product> productList = [
     Product(
       price: 50000,
@@ -86,6 +87,12 @@ class _SellPageState extends State<SellPage> {
     setState(() {});
   }
 
+  void _onDeleteAllProductSelected() {
+    productsSelected = [];
+    _quantity = 0;
+    setState(() {});
+  }
+
   void _onShowDetaiOrder() =>
       context.showBottomSheet(Order(productList: productsSelected));
 
@@ -113,6 +120,7 @@ class _SellPageState extends State<SellPage> {
                 items: productList,
                 child: SellListView(
                   productList: productList,
+                  quantity: _quantity,
                   onLess: _onLess,
                   onTap: _onMore,
                 ),
@@ -122,6 +130,7 @@ class _SellPageState extends State<SellPage> {
             BottomPayment(
               productList: productsSelected,
               onTap: _onShowDetaiOrder,
+              onDelete: _onDeleteAllProductSelected,
             ),
           ],
         ),

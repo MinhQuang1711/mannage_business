@@ -5,11 +5,13 @@ import 'package:mannager_business/ui/sell/widgets/product_card.dart';
 class SellListView extends StatelessWidget {
   const SellListView({
     super.key,
+    this.quantity,
     this.controller,
     required this.onLess,
     required this.onTap,
     required this.productList,
   });
+  final int? quantity;
   final Function(Product) onTap;
   final Function(Product) onLess;
   final List<Product> productList;
@@ -23,6 +25,7 @@ class SellListView extends StatelessWidget {
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: ProductCard(
+          quantity: quantity,
           product: productList[index],
           onLess: () => onLess(productList[index]),
           onTap: () => onTap(productList[index]),
