@@ -20,11 +20,13 @@ class BaseTextFields extends StatelessWidget {
     this.sufWidget,
     this.hintColor,
     this.readOnly,
+    this.keyboardType,
   });
 
   final String? Function(String?)? validate;
   final TextEditingController? controller;
   final Function(String?)? onChanged;
+  final TextInputType? keyboardType;
   final InputBorder? errorBorder;
   final InputBorder? focusBorder;
   final Color? backgroundColor;
@@ -50,6 +52,7 @@ class BaseTextFields extends StatelessWidget {
     return TextFormField(
       style: getStyle(BusinessColors.black),
       obscureText: obs ?? false,
+      keyboardType: keyboardType,
       controller: controller,
       onChanged: onChanged,
       onTap: onTap,

@@ -12,10 +12,12 @@ import '../../../widget/images/images.dart';
 class ProductCard extends StatefulWidget {
   const ProductCard({
     super.key,
+    this.quantity,
     required this.product,
     required this.onLess,
     required this.onTap,
   });
+  final int? quantity;
   final Product product;
   final Function() onTap;
   final Function() onLess;
@@ -42,6 +44,12 @@ class _ProductCardState extends State<ProductCard> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    widget.quantity != null ? _quantity = widget.quantity! : null;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BaseCard(
       onTap: _onTap,
@@ -59,7 +67,7 @@ class _ProductCardState extends State<ProductCard> {
                 ),
                 const Spacer(),
                 Text(
-                  "${widget.product.price?.toMoney()} đ",
+                  widget.product.price?.toMoney() ?? "0",
                   style: captionMedium,
                 )
               ],

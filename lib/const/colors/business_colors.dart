@@ -6,12 +6,12 @@ class BusinessColors {
   static const Color background = Color(0XFFE5E4E2);
 
   static const Color dark = Color(0XFF4C4C4E);
-  static const Color light = Color(0XFF939395);
+  static const Color light = Color(0XFFE4E4E4);
   static const Color red = Color(0XFFFF4500);
   static const Color lightRed = Color(0XFFFFAAAA);
   static const Color darkRed = Color(0XFFAA0000);
 
-  static const Color green = Color(0XFFE5E4E2);
+  static const Color green = Color(0XFF9CCD62);
   static const Color lightGreen = Color(0XFF9CCD62);
 
   static const Color blue = Color(0XFF002456);

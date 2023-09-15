@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mannager_business/const/colors/business_colors.dart';
-import 'package:mannager_business/const/text_style/text_style.dart';
 import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/gen/assets.gen.dart';
+import 'package:mannager_business/ui/sell/views/orders/order.dart';
 import 'package:mannager_business/ui/sell/widgets/bottom_payment.dart';
 import 'package:mannager_business/ui/sell/widgets/sell_lis_view.dart';
+import 'package:mannager_business/ultils/extensions/context.dart';
 import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
 import 'package:mannager_business/widget/list_views/list_view.dart';
 
 import 'package:mannager_business/widget/text_fields/custom_text_fields.dart';
+import 'package:mannager_business/widget/titles/title.dart';
 
 class Sell extends StatelessWidget {
   const Sell({super.key});
@@ -85,7 +86,7 @@ class _SellPageState extends State<SellPage> {
       description: "Mango, ginger, oloong tea",
     ),
   ];
-  void _onTap(Product value) {
+  void _onMore(Product value) {
     productsSelected.add(value);
     setState(() {});
   }
@@ -97,15 +98,13 @@ class _SellPageState extends State<SellPage> {
     setState(() {});
   }
 
+  void _onShowDetaiOrder() =>
+      context.showBottomSheet(Order(productList: productsSelected));
+
   List<Product> productsSelected = [];
 
   @override
   Widget build(BuildContext context) {
-    const decoration = BoxDecoration(
-      border: Border(
-        bottom: BorderSide(color: BusinessColors.dark),
-      ),
-    );
     return Stack(
       children: [
         Column(
@@ -119,13 +118,7 @@ class _SellPageState extends State<SellPage> {
               ),
             ),
             const SizedBox(height: 10),
-            Container(
-              decoration: decoration,
-              child: const Text(
-                "Kết quả tìm kiếm",
-                style: bodyMedium,
-              ),
-            ),
+            const BusinessTitle(title: "Kết quả tìm kiếm"),
             const SizedBox(height: 8),
             Expanded(
               child: BusinessListView<Product>(
@@ -133,12 +126,15 @@ class _SellPageState extends State<SellPage> {
                 child: SellListView(
                   productList: productList,
                   onLess: _onLess,
-                  onTap: _onTap,
+                  onTap: _onMore,
                 ),
               ),
             ),
             const SizedBox(height: 10),
-            BottomPayment(productList: productsSelected),
+            BottomPayment(
+              productList: productsSelected,
+              onTap: _onShowDetaiOrder,
+            ),
           ],
         ),
       ],

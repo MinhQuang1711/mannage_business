@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/enum/buttons_size/button_size.dart';
 import 'package:mannager_business/ultils/extensions/buttons._extension.dart';
-import 'package:mannager_business/widget/buttons/base_buttons.dart';
-import 'package:mannager_business/widget/buttons/i_buttons.dart';
+import '../../widget/buttons/base_buttons.dart';
+import '../../widget/buttons/i_buttons.dart';
 
 class CustomButtons extends IButtons {
   @override

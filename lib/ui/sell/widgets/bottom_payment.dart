@@ -8,19 +8,25 @@ import 'package:mannager_business/ultils/extensions/product_list.dart';
 class BottomPayment extends StatelessWidget {
   const BottomPayment({
     super.key,
+    this.onTap,
     required this.productList,
   });
   final List<Product> productList;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 100),
-      transitionBuilder: (child, animation) => ScaleTransition(
-        scale: animation,
-        child: child,
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: onTap,
+      child: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 100),
+        transitionBuilder: (child, animation) => ScaleTransition(
+          scale: animation,
+          child: child,
+        ),
+        child: productList.isNotEmpty ? _child(productList) : const SizedBox(),
       ),
-      child: productList.isNotEmpty ? _child(productList) : const SizedBox(),
     );
   }
 }
