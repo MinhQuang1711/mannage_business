@@ -26,7 +26,8 @@ class ProductCard extends StatefulWidget {
   State<ProductCard> createState() => _ProductCardState();
 }
 
-class _ProductCardState extends State<ProductCard> {
+class _ProductCardState extends State<ProductCard>
+    with AutomaticKeepAliveClientMixin {
   int _quantity = 0;
   void _onTap() {
     _quantity++;
@@ -51,6 +52,7 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BaseCard(
       onTap: _onTap,
       suffWidget: BusinessImage(assetName: widget.product.imageUrl ?? ""),
@@ -101,6 +103,9 @@ class _ProductCardState extends State<ProductCard> {
           : null,
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 Widget _iconButton(AssetGenImage assetGenImage, Function() onTap) {

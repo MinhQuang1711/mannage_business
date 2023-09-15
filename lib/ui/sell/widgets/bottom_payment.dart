@@ -49,7 +49,7 @@ Widget _child(List<Product> productList) {
           "Tổng thanh toán: ",
           style: captionRegular.copyWith(color: BusinessColors.white),
         ),
-        Text("${productList.getTotalPrice().toMoney()} vnđ",
+        Text(productList.getTotalPrice().toMoney(),
             style: captionMedium.copyWith(color: BusinessColors.white)),
       ],
     ),

@@ -44,6 +44,11 @@ class _OrderPageState extends State<OrderPage> {
   }
 
   @override
+  void didUpdateWidget(covariant OrderPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void initState() {
     super.initState();
     _withOutDuplicate();
@@ -63,7 +68,7 @@ class _OrderPageState extends State<OrderPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BusinessTitle(title: "Sản phẩm (${_orderDetailList.length})"),
+                BusinessTitle(title: "Sản phẩm (${widget.productList.length})"),
                 const SizedBox(height: 10),
                 ProductBar(orderDetailList: _orderDetailList),
                 const SizedBox(height: 10),
