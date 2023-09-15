@@ -53,8 +53,6 @@ class _ProductCardState extends State<ProductCard>
 
   @override
   void didUpdateWidget(covariant ProductCard oldWidget) {
-    print(oldWidget.quantity);
-    print(widget.quantity);
     super.didUpdateWidget(oldWidget);
     _onUpdateQuantity(oldWidget);
   }

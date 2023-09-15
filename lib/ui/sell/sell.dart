@@ -91,6 +91,10 @@ class _SellPageState extends State<SellPage> {
     productsSelected = [];
     _quantity = 0;
     setState(() {});
+    Future.delayed(const Duration(milliseconds: 100)).then((value) {
+      _quantity = null;
+      setState(() {});
+    });
   }
 
   void _onShowDetaiOrder() =>
