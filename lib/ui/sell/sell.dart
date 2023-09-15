@@ -87,14 +87,22 @@ class _SellPageState extends State<SellPage> {
     setState(() {});
   }
 
-  void _onDeleteAllProductSelected() {
+  void _refreshProductsAndQuantity() {
     productsSelected = [];
     _quantity = 0;
     setState(() {});
-    Future.delayed(const Duration(milliseconds: 100)).then((value) {
+  }
+
+  void _initQuantity() {
+    Future.delayed(const Duration(milliseconds: 50)).then((value) {
       _quantity = null;
       setState(() {});
     });
+  }
+
+  void _onDeleteAllProductSelected() {
+    _refreshProductsAndQuantity();
+    _initQuantity();
   }
 
   void _onShowDetaiOrder() =>
