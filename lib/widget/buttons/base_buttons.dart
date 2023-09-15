@@ -27,6 +27,7 @@ class BaseButtons extends StatelessWidget {
       onTap: onTap,
       behavior: HitTestBehavior.translucent,
       child: Container(
+        padding: buttonSize.getPadding(),
         decoration: BoxDecoration(
           borderRadius: buttonSize.getBorderRadius(),
           border: buttonSize.getBorder(borderColor),
