@@ -11,6 +11,7 @@ class CustomTextField extends ITextFields {
     bool? obs,
     String? hintText,
     Widget? prefIcon,
+    Widget? sufIcon,
     double? borderRadius,
     TextInputType? keyBoardType,
     Function(String?)? onChanged,
@@ -29,8 +30,10 @@ class CustomTextField extends ITextFields {
     }
 
     return BaseTextFields(
+      lable: "LABLE",
       obs: obs,
       hintText: hintText,
+      sufWidget: sufIcon,
       validate: validate,
       prefWidget: prefIcon,
       onChanged: onChanged,
