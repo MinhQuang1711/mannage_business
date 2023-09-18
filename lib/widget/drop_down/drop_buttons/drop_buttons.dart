@@ -31,7 +31,7 @@ class CustomDropButtons<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const defaultPadding = EdgeInsets.symmetric(horizontal: 10, vertical: 12);
+    const defaultPadding = EdgeInsets.symmetric(horizontal: 10, vertical: 9);
     return SearchField(
       readOnly: true,
       validator: validate,
@@ -44,7 +44,7 @@ class CustomDropButtons<T> extends StatelessWidget {
         contentPadding: padding ?? defaultPadding,
         focusedBorder: focusBorder,
         enabledBorder: errorBorder,
-        hintStyle: detailRegular.copyWith(color: BusinessColors.light),
+        hintStyle: captionRegular.copyWith(color: BusinessColors.dark),
       ),
       suggestions: listItems.map((e) => suggestions(e)).toList(),
     );
