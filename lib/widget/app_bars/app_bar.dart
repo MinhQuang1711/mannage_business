@@ -8,10 +8,12 @@ import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
 class BusinessAppbar extends StatelessWidget implements PreferredSizeWidget {
   const BusinessAppbar({
     super.key,
-    required this.canBack,
-    required this.title,
     this.actions,
+    required this.title,
+    this.backgroundColor,
+    required this.canBack,
   });
+  final Color? backgroundColor;
   final bool canBack;
   final String title;
   final List<Widget>? actions;
@@ -20,7 +22,7 @@ class BusinessAppbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: BusinessColors.lightOrange,
+      backgroundColor: backgroundColor ?? BusinessColors.lightOrange,
       title: Text(
         title,
         style: h6Medium.copyWith(color: BusinessColors.white),

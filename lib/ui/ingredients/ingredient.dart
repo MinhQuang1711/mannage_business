@@ -6,8 +6,8 @@ import 'package:mannager_business/widget/app_bars/app_bar.dart';
 
 import '../../widget/row_buttons/row_button.dart';
 
-class Ingredient extends StatelessWidget {
-  const Ingredient({super.key});
+class IngredientScreen extends StatelessWidget {
+  const IngredientScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
