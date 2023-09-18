@@ -57,10 +57,11 @@ class BaseTextFields extends StatelessWidget {
       onChanged: onChanged,
       onTap: onTap,
       decoration: InputDecoration(
+        labelStyle: detailRegular,
         isDense: true,
         border: border,
         hintText: hintText,
-        suffixIcon: sufWidget,
+        suffix: sufWidget,
         prefixIcon: prefWidget,
         contentPadding: padding,
         errorBorder: errorBorder,

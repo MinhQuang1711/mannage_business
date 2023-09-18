@@ -55,6 +55,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/add.png
   AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
 
+  /// File path: assets/icons/back.png
+  AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
+
   /// File path: assets/icons/delete.png
   AssetGenImage get delete => const AssetGenImage('assets/icons/delete.png');
 
@@ -77,6 +80,7 @@ class $AssetsIconsGen {
         trashLight,
         userLight,
         add,
+        back,
         delete,
         less,
         search

@@ -4,7 +4,7 @@ import 'package:mannager_business/const/text_style/text_style.dart';
 import 'package:mannager_business/gen/assets.gen.dart';
 import 'package:mannager_business/ui/accounts/acctount.dart';
 import 'package:mannager_business/ui/histories/history.dart';
-import 'package:mannager_business/ui/overview/overview.dart';
+import 'package:mannager_business/ui/ingredients/ingredient.dart';
 import 'package:mannager_business/ui/sell/sell.dart';
 import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
 
@@ -43,7 +43,7 @@ class _RootState extends State<Root> {
   ];
 
   final List<Widget> _tabs = [
-    const Overview(),
+    const Ingredient(),
     const History(),
     const Sell(),
     const Account(),
