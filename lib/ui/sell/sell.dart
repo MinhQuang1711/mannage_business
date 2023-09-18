@@ -30,6 +30,7 @@ class SellPage extends StatefulWidget {
 }
 
 class _SellPageState extends State<SellPage> {
+  int? _quantity;
   final List<Product> productList = [
     Product(
       price: 50000,
@@ -86,6 +87,24 @@ class _SellPageState extends State<SellPage> {
     setState(() {});
   }
 
+  void _refreshProductsAndQuantity() {
+    productsSelected = [];
+    _quantity = 0;
+    setState(() {});
+  }
+
+  void _initQuantity() {
+    Future.delayed(const Duration(milliseconds: 50)).then((value) {
+      _quantity = null;
+      setState(() {});
+    });
+  }
+
+  void _onDeleteAllProductSelected() {
+    _refreshProductsAndQuantity();
+    _initQuantity();
+  }
+
   void _onShowDetaiOrder() =>
       context.showBottomSheet(Order(productList: productsSelected));
 
@@ -113,6 +132,7 @@ class _SellPageState extends State<SellPage> {
                 items: productList,
                 child: SellListView(
                   productList: productList,
+                  quantity: _quantity,
                   onLess: _onLess,
                   onTap: _onMore,
                 ),
@@ -122,6 +142,7 @@ class _SellPageState extends State<SellPage> {
             BottomPayment(
               productList: productsSelected,
               onTap: _onShowDetaiOrder,
+              onDelete: _onDeleteAllProductSelected,
             ),
           ],
         ),

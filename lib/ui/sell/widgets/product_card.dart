@@ -44,10 +44,17 @@ class _ProductCardState extends State<ProductCard>
     widget.onLess();
   }
 
+  void _onUpdateQuantity(ProductCard oldWidget) {
+    if (oldWidget.quantity != widget.quantity) {
+      _quantity = widget.quantity ?? 0;
+      setState(() {});
+    }
+  }
+
   @override
-  void initState() {
-    super.initState();
-    widget.quantity != null ? _quantity = widget.quantity! : null;
+  void didUpdateWidget(covariant ProductCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _onUpdateQuantity(oldWidget);
   }
 
   @override
