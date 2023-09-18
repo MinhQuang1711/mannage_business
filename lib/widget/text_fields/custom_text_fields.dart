@@ -40,7 +40,7 @@ class CustomTextField extends ITextFields {
       controller: controller,
       keyboardType: keyBoardType,
       border: _outlineInputs(null, borderRadius: borderRadius),
-      errorBorder: _outlineInputs(BusinessColors.red),
+      errorBorder: _outlineInputs(null),
       focusBorder: _outlineInputs(BusinessColors.blue),
     );
   }
@@ -69,7 +69,7 @@ class CustomTextField extends ITextFields {
       validate: validate,
       controller: controller,
       border: _underBorder(null),
-      errorBorder: _underBorder(BusinessColors.red),
+      errorBorder: _underBorder(null),
       focusBorder: _underBorder(BusinessColors.blue),
     );
   }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/enum/buttons_size/button_size.dart';
+import 'package:mannager_business/ui/ingredients/views/create_ingredient_widget.dart';
 import 'package:mannager_business/widget/app_bars/app_bar.dart';
 
 import '../../widget/row_buttons/row_button.dart';
-import '../../widget/text_fields/custom_text_fields.dart';
 
 class Ingredient extends StatelessWidget {
   const Ingredient({super.key});
@@ -23,75 +23,74 @@ class IngerdientPage extends StatefulWidget {
 }
 
 class _IngerdientPageState extends State<IngerdientPage> {
-  final _name = TextEditingController();
-  final _price = TextEditingController();
-  final _loss = TextEditingController();
-  final _netWeight = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  String? _name;
+  double? _price;
+  double? _weight;
+  double? _loss;
 
-  void _disposeController() {
-    _name.dispose();
-    _price.dispose();
-    _loss.dispose();
-    _netWeight.dispose();
+  void _onUpdateName(String? value) {
+    _name = value;
+    setState(() {});
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _disposeController();
+  void _onUpdatePrice(double? value) {
+    _price = value;
+    setState(() {});
+  }
+
+  void _onUpdateWeight(double? value) {
+    _weight = value;
+    setState(() {});
+  }
+
+  void _onUpdateLoss(double? value) {
+    _loss = value;
+    setState(() {});
+  }
+
+  void _onCreate() {
+    if (_formKey.currentState?.validate() == true) {
+      //TODO SOMETHING
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          const BusinessAppbar(canBack: false, title: "Thêm mới nguyên liệu"),
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            const Expanded(
-              flex: 2,
-              child: Placeholder(),
-            ),
-            const SizedBox(height: 30),
-            Expanded(
-              child: CustomTextField().outline(
-                controller: _name,
-                hintText: "Nhập tên nguyên liệu",
+          const BusinessAppbar(canBack: true, title: "Thêm mới nguyên liệu"),
+      body: Form(
+        key: _formKey,
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              const Expanded(
+                flex: 2,
+                child: Placeholder(),
               ),
-            ),
-            Expanded(
-              child: CustomTextField().outline(
-                controller: _price,
-                sufIcon: const Text("vnđ"),
-                hintText: "Nhập Giá nguyên liệu",
+              const SizedBox(height: 30),
+              Expanded(
+                flex: 4,
+                child: CreateIngredientWidget(
+                  onUpdateLoss: _onUpdateLoss,
+                  onUpdateName: _onUpdateName,
+                  onUpdatePrice: _onUpdatePrice,
+                  onUpdateWeight: _onUpdateWeight,
+                ),
               ),
-            ),
-            Expanded(
-              child: CustomTextField().outline(
-                controller: _netWeight,
-                sufIcon: const Text("gram"),
-                hintText: "Nhập khối lượng tịnh (g)",
-              ),
-            ),
-            Expanded(
-              child: CustomTextField().outline(
-                controller: _loss,
-                sufIcon: const Text("%"),
-                hintText: "Nhập mức hao hụt (%)",
-              ),
-            ),
-            const Spacer(),
-            Expanded(
-              child: BusinessRowButton(
-                onTapAccept: () {},
-                contentAccept: "Thêm mới",
-                acceptColor: BusinessColors.lightOrange,
-                buttonSize: ButtonSize.SIZE_32,
-              ),
-            )
-          ],
+              const Spacer(),
+              Expanded(
+                child: BusinessRowButton(
+                  onTapAccept: _onCreate,
+                  contentAccept: "Thêm mới",
+                  acceptColor: BusinessColors.lightOrange,
+                  buttonSize: ButtonSize.SIZE_32,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
