@@ -32,6 +32,9 @@ class $AssetsIconsGen {
   AssetGenImage get expandUpLight =>
       const AssetGenImage('assets/icons/Expand_up_light.png');
 
+  /// File path: assets/icons/Eyes.png
+  AssetGenImage get eyes => const AssetGenImage('assets/icons/Eyes.png');
+
   /// File path: assets/icons/Home_light.png
   AssetGenImage get homeLight =>
       const AssetGenImage('assets/icons/Home_light.png');
@@ -47,6 +50,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Trash_light.png
   AssetGenImage get trashLight =>
       const AssetGenImage('assets/icons/Trash_light.png');
+
+  /// File path: assets/icons/UnEyes.png
+  AssetGenImage get unEyes => const AssetGenImage('assets/icons/UnEyes.png');
 
   /// File path: assets/icons/User_light.png
   AssetGenImage get userLight =>
@@ -74,10 +80,12 @@ class $AssetsIconsGen {
         bagLight,
         basketAlt3Light,
         expandUpLight,
+        eyes,
         homeLight,
         searchLight,
         timeLight,
         trashLight,
+        unEyes,
         userLight,
         add,
         back,
