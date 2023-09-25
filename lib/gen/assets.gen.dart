@@ -64,6 +64,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back.png
   AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
 
+  /// File path: assets/icons/close.png
+  AssetGenImage get close => const AssetGenImage('assets/icons/close.png');
+
   /// File path: assets/icons/delete.png
   AssetGenImage get delete => const AssetGenImage('assets/icons/delete.png');
 
@@ -89,6 +92,7 @@ class $AssetsIconsGen {
         userLight,
         add,
         back,
+        close,
         delete,
         less,
         search

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/defautl_padding.dart';
 import 'package:mannager_business/const/text_style/text_style.dart';
-import 'package:mannager_business/gen/assets.gen.dart';
+import 'package:mannager_business/ui/overview/widgets/floating_buttons.dart';
 import 'package:mannager_business/ui/overview/widgets/import_bill_card.dart';
 import 'package:mannager_business/ui/overview/widgets/overview_card.dart';
 import 'package:mannager_business/ultils/extensions/money.dart';
 import 'package:mannager_business/widget/app_bars/app_bar.dart';
-import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
 import 'package:mannager_business/widget/list_views/list_view.dart';
 
 class Overview extends StatelessWidget {
@@ -63,14 +62,7 @@ class Overview extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: BusinessColors.blue,
-        child: BusinessIcon(
-          assetGenImage: Assets.icons.add,
-          color: BusinessColors.white,
-        ),
-      ),
+      floatingActionButton: const OverviewFloatingButton(),
     );
   }
 
