@@ -1,7 +1,7 @@
 import 'package:mannager_business/networks/data_respones/data_response.dart';
 
-class ResponFaild extends DataResponse<String> {
+class ResponseFaild<T> extends DataResponse<T> {
   final String error;
-  ResponFaild(this.error) : super(errorMessage: error);
+  ResponseFaild(this.error) : super(errorMessage: error);
   String? getError() => error;
 }
