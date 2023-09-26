@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/ultils/extensions/money.dart';
 import 'package:mannager_business/widget/cards/base_cards.dart';
 
 import '../../../const/colors/business_colors.dart';
 import '../../../const/text_style/text_style.dart';
+import '../../../domains/models/products/product.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../widget/image_icons/business_image_icon.dart';
 import '../../../widget/images/images.dart';
@@ -62,7 +62,7 @@ class _ProductCardState extends State<ProductCard>
     super.build(context);
     return BaseCard(
       onTap: _onTap,
-      suffWidget: BusinessImage(assetName: widget.product.imageUrl ?? ""),
+      suffWidget: BusinessImage(assetName: widget.product.imagePath ?? ""),
       title: Container(
         padding: const EdgeInsets.only(top: 10, right: 10),
         child: Column(
@@ -80,10 +80,6 @@ class _ProductCardState extends State<ProductCard>
                   style: captionMedium,
                 )
               ],
-            ),
-            Text(
-              "   Note: ${widget.product.description}",
-              style: detailRegular,
             ),
           ],
         ),

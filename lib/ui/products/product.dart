@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/enum/buttons_size/button_size.dart';
+import 'package:mannager_business/const/text_style/text_style.dart';
 import 'package:mannager_business/ui/products/views/Ingredient_view.dart';
 import 'package:mannager_business/ui/products/views/top_bar.dart';
 import 'package:mannager_business/widget/app_bars/app_bar.dart';
@@ -24,14 +27,21 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  File? filePicked;
+
+  void _callBackUpdateIamge(File file) async {
+    filePicked = file;
+    setState(() {});
+  }
+
   void _onCreate() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BusinessAppbar(
+      appBar: BusinessAppbar(
         canBack: true,
         title: "Thêm mới sản phẩm",
-        backgroundColor: BusinessColors.green,
+        backgroundColor: BusinessColors.orange.withOpacity(0.8),
       ),
       body: UnfocusWidget(
         child: Padding(
@@ -43,15 +53,23 @@ class _ProductPageState extends State<ProductPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Expanded(
-                      child: CreateProductTopbar(),
+                    Expanded(
+                      child: CreateProductTopbar(
+                        callBackUpdateImage: _callBackUpdateIamge,
+                        imageFile: filePicked,
+                      ),
+                    ),
+                    const Text(
+                      "Nguyên liệu: ",
+                      style: bodyBold,
                     ),
                     const Expanded(
+                      flex: 2,
                       child: IngredientView(),
                     ),
                     const SizedBox(height: 50),
                     BusinessRowButton(
-                      acceptColor: BusinessColors.green,
+                      acceptColor: BusinessColors.orange.withOpacity(0.8),
                       buttonSize: ButtonSize.SIZE_32,
                       contentAccept: "Thêm mới",
                       onTapAccept: _onCreate,

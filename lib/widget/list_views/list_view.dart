@@ -13,14 +13,16 @@ class BusinessListView<T> extends StatelessWidget {
   final Future<void> Function()? onRefresh;
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      onRefresh: onRefresh ?? () async {},
-      child: items.isEmpty
-          ? const Text(
-              "Danh sách trống",
-              style: captionRegular,
-            )
-          : child,
+    return Center(
+      child: RefreshIndicator(
+        onRefresh: onRefresh ?? () async {},
+        child: items.isEmpty
+            ? const Text(
+                "Danh sách trống",
+                style: captionRegular,
+              )
+            : child,
+      ),
     );
   }
 }

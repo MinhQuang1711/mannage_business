@@ -1,6 +1,5 @@
-import 'package:mannager_business/domains/models/products.dart';
-
 import '../../../../../domains/models/order_detai.dart';
+import '../../../../../domains/models/products/product.dart';
 
 class OrderService {
   int countQuantityOfProducts(

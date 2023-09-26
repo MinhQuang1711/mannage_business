@@ -1,4 +1,5 @@
-import 'package:mannager_business/domains/models/products.dart';
+
+import 'package:mannager_business/domains/models/products/product.dart';
 
 class OrderDetail {
   final int? quantity;

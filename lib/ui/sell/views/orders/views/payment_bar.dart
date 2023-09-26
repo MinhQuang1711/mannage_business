@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/maps/payment_type.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/ui/sell/views/orders/widgets/input_drop_card.dart';
 import 'package:mannager_business/ultils/extensions/money.dart';
 import 'package:mannager_business/ultils/extensions/product_list.dart';
 import 'package:mannager_business/widget/drop_down/drop_items/drop_items.dart';
 
+import '../../../../../domains/models/products/product.dart';
 import '../widgets/infor_card.dart';
 import '../widgets/input_card.dart';
 

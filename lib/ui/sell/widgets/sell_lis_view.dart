@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/ui/sell/widgets/product_card.dart';
+
+import '../../../domains/models/products/product.dart';
 
 class SellListView extends StatelessWidget {
   const SellListView({
