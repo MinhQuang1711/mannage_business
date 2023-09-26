@@ -43,6 +43,7 @@ dependencies:
   dio: ^5.3.3
   freezed: ^2.4.2
   json_annotation: ^4.8.1
+  file_picker: ^5.5.0
 
 
 dev_dependencies:

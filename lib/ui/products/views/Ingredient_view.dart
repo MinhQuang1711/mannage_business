@@ -45,7 +45,7 @@ class _IngredientViewState extends State<IngredientView> {
             child: Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Text(
-                "Thêm +",
+                "Thêm nguyên liệu +",
                 style: detailBold.copyWith(fontFamily: ""),
               ),
             ),

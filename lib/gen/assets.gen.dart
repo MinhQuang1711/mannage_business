@@ -28,6 +28,10 @@ class $AssetsIconsGen {
   AssetGenImage get basketAlt3Light =>
       const AssetGenImage('assets/icons/Basket_alt_3_light.png');
 
+  /// File path: assets/icons/Camera_light.png
+  AssetGenImage get cameraLight =>
+      const AssetGenImage('assets/icons/Camera_light.png');
+
   /// File path: assets/icons/Expand_up_light.png
   AssetGenImage get expandUpLight =>
       const AssetGenImage('assets/icons/Expand_up_light.png');
@@ -82,6 +86,7 @@ class $AssetsIconsGen {
         backLight,
         bagLight,
         basketAlt3Light,
+        cameraLight,
         expandUpLight,
         eyes,
         homeLight,

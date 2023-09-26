@@ -105,8 +105,8 @@ class _SellPageState extends State<SellPage> {
     _initQuantity();
   }
 
-  void _onShowDetaiOrder() =>
-      context.showBottomSheet(Order(productList: productsSelected));
+  void _onShowDetaiOrder() async =>
+      await context.showBottomSheet(Order(productList: productsSelected));
 
   List<Product> productsSelected = [];
 

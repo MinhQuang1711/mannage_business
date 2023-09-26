@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/text_style/text_style.dart';
+import 'package:mannager_business/ultils/routers/path.dart';
 
 class OverviewFloatingButton extends StatefulWidget {
   const OverviewFloatingButton({super.key});
@@ -17,7 +19,10 @@ class _OverviewFloatingButtonState extends State<OverviewFloatingButton> {
     setState(() {});
   }
 
-  void _onAddProduct() {}
+  void _onCreateProduct() {
+    context.push(BusinessPath.createProduct);
+  }
+
   void _onAddIgredient() {}
   void _onAddImportBill() {}
 
@@ -25,7 +30,7 @@ class _OverviewFloatingButtonState extends State<OverviewFloatingButton> {
   Widget build(BuildContext context) {
     final List<SpeedDialChild> fabs = [
       SpeedDialChild(
-        onTap: _onAddProduct,
+        onTap: _onCreateProduct,
         labelWidget: _speedDialChildWidget(
             content: "Sản phẩm", textColor: BusinessColors.orange),
       ),
