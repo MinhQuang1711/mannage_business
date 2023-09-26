@@ -23,7 +23,6 @@ class InforDetailOverviewCard extends StatelessWidget {
       child: Column(
         children: [
           Text(title),
-          const SizedBox(height: 5),
           Text(
             content,
             style: bodyBold.copyWith(

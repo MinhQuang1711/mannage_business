@@ -33,7 +33,7 @@ class _OverviewCardState extends State<OverviewCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
       decoration: BoxDecoration(
         color: BusinessColors.white,
         borderRadius: BorderRadius.circular(8),
@@ -49,7 +49,7 @@ class _OverviewCardState extends State<OverviewCard> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _infoRevenue(
-            canSee: false,
+            canSee: true,
             isHiden: false,
             textColor: BusinessColors.blue,
             content: widget.totalRevenue.toMoney(),
@@ -77,7 +77,7 @@ class _OverviewCardState extends State<OverviewCard> {
     required String content,
     Function()? onTap,
   }) {
-    const String _hidenValue = "******";
+    const String _hidenValue = "**** ****";
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -85,7 +85,7 @@ class _OverviewCardState extends State<OverviewCard> {
           children: [
             Text(
               title,
-              style: detailRegular,
+              style: bodyRegular,
             ),
             const SizedBox(width: 5),
             isHiden
@@ -93,7 +93,7 @@ class _OverviewCardState extends State<OverviewCard> {
                     onTap: onTap,
                     child: BusinessIcon(
                       assetGenImage:
-                          canSee ? Assets.icons.unEyes : Assets.icons.eyes,
+                          canSee ? Assets.icons.eye : Assets.icons.eyeSlash,
                     ),
                   )
                 : const SizedBox()
@@ -101,8 +101,8 @@ class _OverviewCardState extends State<OverviewCard> {
         ),
         const SizedBox(height: 10),
         Text(
-          canSee ? _hidenValue : content,
-          style: bodyBold.copyWith(color: canSee ? null : textColor),
+          !canSee ? _hidenValue : content,
+          style: bodyBold.copyWith(color: !canSee ? null : textColor),
         ),
       ],
     );

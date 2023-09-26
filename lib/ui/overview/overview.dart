@@ -68,8 +68,6 @@ class Overview extends StatelessWidget {
 
   Text _title(String title) => Text(
         title,
-        style: bodyBold.copyWith(
-          color: BusinessColors.dark.withOpacity(0.9),
-        ),
+        style: bodyBold.copyWith(color: BusinessColors.dark),
       );
 }
