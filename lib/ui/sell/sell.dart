@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/gen/assets.gen.dart';
 import 'package:mannager_business/ui/sell/views/orders/order.dart';
 import 'package:mannager_business/ui/sell/widgets/bottom_payment.dart';
@@ -10,6 +9,8 @@ import 'package:mannager_business/widget/list_views/list_view.dart';
 
 import 'package:mannager_business/widget/text_fields/custom_text_fields.dart';
 import 'package:mannager_business/widget/titles/title.dart';
+
+import '../../domains/models/products/product.dart';
 
 class Sell extends StatelessWidget {
   const Sell({super.key});
@@ -35,44 +36,37 @@ class _SellPageState extends State<SellPage> {
     Product(
       price: 50000,
       name: "Oloong Mango tea",
-      imageUrl: Assets.images.product.keyName,
-      description: "Mango, ginger, oloong tea",
+      imagePath: Assets.images.product.keyName,
     ),
     Product(
       price: 50000,
       name: "Lemon Americano",
-      imageUrl: Assets.images.ameChanh.keyName,
-      description: "Lemon, Coffee",
+      imagePath: Assets.images.ameChanh.keyName,
     ),
     Product(
       price: 50000,
       name: "PassionChia",
-      imageUrl: Assets.images.passionChia.keyName,
-      description: "Mango, ginger, oloong tea",
+      imagePath: Assets.images.passionChia.keyName,
     ),
     Product(
       price: 50000,
       name: "Coffe Latte",
-      imageUrl: Assets.images.latte.keyName,
-      description: "Espresso, fresh milk",
+      imagePath: Assets.images.latte.keyName,
     ),
     Product(
       price: 50000,
       name: "Matcha Latte",
-      imageUrl: Assets.images.matcha.keyName,
-      description: "Matcha, fresh milk",
+      imagePath: Assets.images.matcha.keyName,
     ),
     Product(
       price: 50000,
       name: "Colbrew",
-      imageUrl: Assets.images.originalColdbrew.keyName,
-      description: "Coffee",
+      imagePath: Assets.images.originalColdbrew.keyName,
     ),
     Product(
       price: 50000,
       name: "Big cat",
-      imageUrl: Assets.images.pigCat.keyName,
-      description: "A cat fat likes pig",
+      imagePath: Assets.images.pigCat.keyName,
     ),
   ];
   void _onMore(Product value) {

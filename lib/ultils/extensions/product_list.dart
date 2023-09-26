@@ -1,4 +1,4 @@
-import 'package:mannager_business/domains/models/products.dart';
+import '../../domains/models/products/product.dart';
 
 extension ProductListExtension on List<Product> {
   double getTotalPrice() {

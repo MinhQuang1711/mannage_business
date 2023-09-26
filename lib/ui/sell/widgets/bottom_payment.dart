@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/text_style/text_style.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/ultils/extensions/money.dart';
 import 'package:mannager_business/ultils/extensions/product_list.dart';
+
+import '../../../domains/models/products/product.dart';
 
 class BottomPayment extends StatelessWidget {
   const BottomPayment({

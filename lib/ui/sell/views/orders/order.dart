@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/domains/models/order_detai.dart';
-import 'package:mannager_business/domains/models/products.dart';
 import 'package:mannager_business/ui/sell/views/orders/services/service.dart';
 import 'package:mannager_business/ui/sell/views/orders/views/payment_bar.dart';
 import 'package:mannager_business/ui/sell/views/orders/views/product_bar.dart';
@@ -9,6 +8,8 @@ import 'package:mannager_business/ui/sell/views/orders/widgets/row_buttons.dart'
 import 'package:mannager_business/widget/titles/title.dart';
 import 'package:mannager_business/widget/top_bars.dart/top_bar.dart';
 import 'package:mannager_business/widget/unfocus_widget.dart';
+
+import '../../../../domains/models/products/product.dart';
 
 class Order extends StatelessWidget {
   const Order({super.key, required this.productList});
