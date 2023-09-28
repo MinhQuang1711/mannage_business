@@ -21,7 +21,7 @@ class ProductRepository extends IPoductRepository {
   Future<DataResponse<List<Product>>> getProduct({String? name}) {
     return excuter(
       networkRequest: NetworkRequest(
-          endPoint: "This is end point of get product",
+          endPoint: "Products/get-all",
           method: RequesMethod.POST,
           body: DataRequest.json({"Name": name})),
       parser: (data) => (data as List).map((e) => Product.fromJson(e)).toList(),

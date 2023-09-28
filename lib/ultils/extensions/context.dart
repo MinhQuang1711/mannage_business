@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mannager_business/widget/snack_bar.dart';
 
 extension ContextEx on BuildContext {
   Future showBottomSheet(Widget child) async {
@@ -11,6 +12,12 @@ extension ContextEx on BuildContext {
         borderRadius:
             BorderRadius.only(topLeft: borderRadius, topRight: borderRadius),
       ),
+    );
+  }
+
+  void showSnackbar({required isSuccess, required content}) {
+    ScaffoldMessenger.of(this).showSnackBar(
+      BusinessSnackbar(isSuccess: isSuccess, content: content),
     );
   }
 }

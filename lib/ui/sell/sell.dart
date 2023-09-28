@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mannager_business/domains/repositories/products/product_repository.dart';
 import 'package:mannager_business/gen/assets.gen.dart';
+import 'package:mannager_business/ui/sell/blocs/bloc.dart';
+import 'package:mannager_business/ui/sell/blocs/sell_event.dart';
+import 'package:mannager_business/ui/sell/blocs/sell_state.dart';
 import 'package:mannager_business/ui/sell/views/orders/order.dart';
 import 'package:mannager_business/ui/sell/widgets/bottom_payment.dart';
 import 'package:mannager_business/ui/sell/widgets/sell_lis_view.dart';
@@ -10,6 +15,7 @@ import 'package:mannager_business/widget/list_views/list_view.dart';
 import 'package:mannager_business/widget/text_fields/custom_text_fields.dart';
 import 'package:mannager_business/widget/titles/title.dart';
 
+import '../../const/fake_data/product_list.dart';
 import '../../domains/models/products/product.dart';
 
 class Sell extends StatelessWidget {
@@ -17,9 +23,12 @@ class Sell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 13),
-      child: const SellPage(),
+    return BlocProvider(
+      create: (context) => SellBloc(ProductRepository()),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 13),
+        child: const SellPage(),
+      ),
     );
   }
 }
@@ -32,46 +41,14 @@ class SellPage extends StatefulWidget {
 
 class _SellPageState extends State<SellPage> {
   int? _quantity;
-  final List<Product> productList = [
-    Product(
-      price: 50000,
-      name: "Oloong Mango tea",
-      imagePath: Assets.images.product.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "Lemon Americano",
-      imagePath: Assets.images.ameChanh.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "PassionChia",
-      imagePath: Assets.images.passionChia.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "Coffe Latte",
-      imagePath: Assets.images.latte.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "Matcha Latte",
-      imagePath: Assets.images.matcha.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "Colbrew",
-      imagePath: Assets.images.originalColdbrew.keyName,
-    ),
-    Product(
-      price: 50000,
-      name: "Big cat",
-      imagePath: Assets.images.pigCat.keyName,
-    ),
-  ];
+
   void _onMore(Product value) {
     productsSelected.add(value);
     setState(() {});
+  }
+
+  void _onGetProductList() {
+    BlocProvider.of<SellBloc>(context).add(const SellEvent.getProduct());
   }
 
   void _onLess(Product value) {
@@ -102,7 +79,22 @@ class _SellPageState extends State<SellPage> {
   void _onShowDetaiOrder() async =>
       await context.showBottomSheet(Order(productList: productsSelected));
 
+  void _whenFailure(String message) {
+    context.showSnackbar(isSuccess: false, content: message);
+  }
+
+  void _whenGetProductSuccess(List<Product> list) {
+    productList = list;
+    setState(() {});
+  }
+
   List<Product> productsSelected = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _onGetProductList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,11 +116,17 @@ class _SellPageState extends State<SellPage> {
             Expanded(
               child: BusinessListView<Product>(
                 items: productList,
-                child: SellListView(
-                  productList: productList,
-                  quantity: _quantity,
-                  onLess: _onLess,
-                  onTap: _onMore,
+                child: BlocListener<SellBloc, SellState>(
+                  listener: (context, state) => state.whenOrNull(
+                    failure: (value) => _whenFailure(value),
+                    getProductSuccess: (value) => _whenGetProductSuccess(value),
+                  ),
+                  child: SellListView(
+                    productList: productList,
+                    quantity: _quantity,
+                    onLess: _onLess,
+                    onTap: _onMore,
+                  ),
                 ),
               ),
             ),
