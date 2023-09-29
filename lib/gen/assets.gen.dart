@@ -32,6 +32,10 @@ class $AssetsIconsGen {
   AssetGenImage get cameraLight =>
       const AssetGenImage('assets/icons/Camera_light.png');
 
+  /// File path: assets/icons/Date_range_duotone_line.png
+  AssetGenImage get dateRangeDuotoneLine =>
+      const AssetGenImage('assets/icons/Date_range_duotone_line.png');
+
   /// File path: assets/icons/Expand_up_light.png
   AssetGenImage get expandUpLight =>
       const AssetGenImage('assets/icons/Expand_up_light.png');
@@ -62,6 +66,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back.png
   AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
 
+  /// File path: assets/icons/calendar-check.png
+  AssetGenImage get calendarCheck =>
+      const AssetGenImage('assets/icons/calendar-check.png');
+
   /// File path: assets/icons/close.png
   AssetGenImage get close => const AssetGenImage('assets/icons/close.png');
 
@@ -88,6 +96,7 @@ class $AssetsIconsGen {
         bagLight,
         basketAlt3Light,
         cameraLight,
+        dateRangeDuotoneLine,
         expandUpLight,
         homeLight,
         searchLight,
@@ -96,6 +105,7 @@ class $AssetsIconsGen {
         userLight,
         add,
         back,
+        calendarCheck,
         close,
         delete,
         eyeSlash,

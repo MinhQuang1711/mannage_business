@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mannager_business/gen/assets.gen.dart';
 import 'package:mannager_business/widget/image_icons/business_image_icon.dart';
 
@@ -26,7 +27,7 @@ class BusinessTopBar extends StatelessWidget {
           BusinessIcon(
             assetGenImage: Assets.icons.backLight,
             color: BusinessColors.white,
-            // onTap: () => context.pop(),
+            onTap: () => context.pop(),
           ),
           Expanded(
             child: Center(

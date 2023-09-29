@@ -29,6 +29,7 @@ class BaseCard extends StatelessWidget {
       behavior: HitTestBehavior.translucent,
       onTap: onTap,
       child: Container(
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: BusinessColors.white,
           borderRadius: _borderRadius,

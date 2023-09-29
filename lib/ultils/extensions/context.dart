@@ -20,4 +20,15 @@ extension ContextEx on BuildContext {
       BusinessSnackbar(isSuccess: isSuccess, content: content),
     );
   }
+
+  Future<DateTimeRange?> pickDateRange({
+    DateTimeRange? initRange,
+  }) async {
+    return await showDateRangePicker(
+      context: this,
+      initialDateRange: initRange,
+      firstDate: DateTime(2022),
+      lastDate: DateTime(2030),
+    );
+  }
 }
