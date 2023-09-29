@@ -38,7 +38,7 @@ class BusinessAppbar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  final sizeHeight = const Size.fromHeight(50);
+  final sizeHeight = const Size.fromHeight(40);
   @override
   Size get preferredSize => sizeHeight;
 }
