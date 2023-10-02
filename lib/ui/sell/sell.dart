@@ -104,7 +104,6 @@ class _SellPageState extends State<SellPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField().outline(
-              borderRadius: 18,
               hintText: "Tìm kiếm sản phẩm",
               prefIcon: BusinessIcon(
                 assetGenImage: Assets.icons.search,
