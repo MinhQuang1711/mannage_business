@@ -44,9 +44,16 @@ class $AssetsIconsGen {
   AssetGenImage get homeLight =>
       const AssetGenImage('assets/icons/Home_light.png');
 
+  /// File path: assets/icons/LogOut.png
+  AssetGenImage get logOut => const AssetGenImage('assets/icons/LogOut.png');
+
   /// File path: assets/icons/Search_light.png
   AssetGenImage get searchLight =>
       const AssetGenImage('assets/icons/Search_light.png');
+
+  /// File path: assets/icons/Sign_out_squre_light.png
+  AssetGenImage get signOutSqureLight =>
+      const AssetGenImage('assets/icons/Sign_out_squre_light.png');
 
   /// File path: assets/icons/Time_light.png
   AssetGenImage get timeLight =>
@@ -67,6 +74,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/View_hide_light.png
   AssetGenImage get viewHideLight =>
       const AssetGenImage('assets/icons/View_hide_light.png');
+
+  /// File path: assets/icons/Waterfall_light.png
+  AssetGenImage get waterfallLight =>
+      const AssetGenImage('assets/icons/Waterfall_light.png');
 
   /// File path: assets/icons/add.png
   AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
@@ -107,12 +118,15 @@ class $AssetsIconsGen {
         dateRangeDuotoneLine,
         expandUpLight,
         homeLight,
+        logOut,
         searchLight,
+        signOutSqureLight,
         timeLight,
         trashLight,
         userLight,
         viewAltLight,
         viewHideLight,
+        waterfallLight,
         add,
         back,
         calendarCheck,
