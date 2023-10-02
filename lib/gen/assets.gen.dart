@@ -60,6 +60,14 @@ class $AssetsIconsGen {
   AssetGenImage get userLight =>
       const AssetGenImage('assets/icons/User_light.png');
 
+  /// File path: assets/icons/View_alt_light.png
+  AssetGenImage get viewAltLight =>
+      const AssetGenImage('assets/icons/View_alt_light.png');
+
+  /// File path: assets/icons/View_hide_light.png
+  AssetGenImage get viewHideLight =>
+      const AssetGenImage('assets/icons/View_hide_light.png');
+
   /// File path: assets/icons/add.png
   AssetGenImage get add => const AssetGenImage('assets/icons/add.png');
 
@@ -103,6 +111,8 @@ class $AssetsIconsGen {
         timeLight,
         trashLight,
         userLight,
+        viewAltLight,
+        viewHideLight,
         add,
         back,
         calendarCheck,

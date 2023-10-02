@@ -92,8 +92,10 @@ class _OverviewCardState extends State<OverviewCard> {
                 ? GestureDetector(
                     onTap: onTap,
                     child: BusinessIcon(
-                      assetGenImage:
-                          canSee ? Assets.icons.eye : Assets.icons.eyeSlash,
+                      assetGenImage: canSee
+                          ? Assets.icons.viewAltLight
+                          : Assets.icons.viewHideLight,
+                      color: BusinessColors.black,
                     ),
                   )
                 : const SizedBox()

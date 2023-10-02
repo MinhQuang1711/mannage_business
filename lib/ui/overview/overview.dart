@@ -36,15 +36,20 @@ class Overview extends StatelessWidget {
             _title("Phiếu nhập & sản phẩm"),
             const SizedBox(height: 5),
             Row(
+              mainAxisSize: MainAxisSize.max,
               children: [
-                InforDetailOverviewCard(
-                  content: 100000.toDouble().toMoney(),
-                  title: "Hóa đơn nhập: 2",
+                Expanded(
+                  child: InforDetailOverviewCard(
+                    content: 100000.toDouble().toMoney(),
+                    title: "Hóa đơn nhập: 2",
+                  ),
                 ),
                 const SizedBox(width: 10),
-                InforDetailOverviewCard(
-                  content: 13.toString(),
-                  title: "Tổng sản phẩm đang bán",
+                Expanded(
+                  child: InforDetailOverviewCard(
+                    content: 13.toString(),
+                    title: "Sản phẩm",
+                  ),
                 ),
               ],
             ),

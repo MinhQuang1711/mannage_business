@@ -17,16 +17,27 @@ class InforDetailOverviewCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        border: Border.all(color: BusinessColors.orange),
+        gradient: const LinearGradient(
+          colors: [
+            BusinessColors.blue,
+            BusinessColors.lightBlue,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        // border: Border.all(color: BusinessColors.orange),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Column(
         children: [
-          Text(title),
+          Text(
+            title,
+            style: bodyRegular.copyWith(color: BusinessColors.white),
+          ),
           Text(
             content,
             style: bodyBold.copyWith(
-              color: BusinessColors.orange,
+              color: BusinessColors.white,
             ),
           )
         ],
