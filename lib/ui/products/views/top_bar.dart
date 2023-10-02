@@ -38,11 +38,13 @@ class CreateProductTopbar extends StatelessWidget {
             child: Column(
           children: [
             CustomTextField().outline(
+              borderRadius: 4,
               hintText: "Nhập tên sản phẩm",
               validate: businessValidate.nullCheck,
             ),
             const SizedBox(height: 10),
             CustomTextField().outline(
+              borderRadius: 4,
               hintText: "Nhập giá sản phẩm",
               sufIcon: const Text("vnđ"),
               validate: businessValidate.nullCheck,

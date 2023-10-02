@@ -21,7 +21,7 @@ class CustomTextField extends ITextFields {
     OutlineInputBorder _outlineInputs(Color? borderColor,
         {double? borderRadius}) {
       return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(borderRadius ?? 8),
+        borderRadius: BorderRadius.circular(borderRadius ?? 6),
         borderSide: BorderSide(
           width: 0.7,
           color: borderColor ?? BusinessColors.dark,
