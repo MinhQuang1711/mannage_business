@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
+import 'package:mannager_business/const/defautl_padding.dart';
 import 'package:mannager_business/const/enum/buttons_size/button_size.dart';
 import 'package:mannager_business/ui/ingredients/views/create_ingredient_widget.dart';
 import 'package:mannager_business/widget/app_bars/app_bar.dart';
+import 'package:mannager_business/widget/unfocus_widget.dart';
 
 import '../../widget/row_buttons/row_button.dart';
 
@@ -58,38 +60,38 @@ class _IngerdientPageState extends State<IngerdientPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          const BusinessAppbar(canBack: true, title: "Thêm mới nguyên liệu"),
-      body: Form(
-        key: _formKey,
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              const Expanded(
-                flex: 2,
-                child: Placeholder(),
-              ),
-              const SizedBox(height: 30),
-              Expanded(
-                flex: 4,
-                child: CreateIngredientWidget(
-                  onUpdateLoss: _onUpdateLoss,
-                  onUpdateName: _onUpdateName,
-                  onUpdatePrice: _onUpdatePrice,
-                  onUpdateWeight: _onUpdateWeight,
+      appBar: const BusinessAppbar(
+        canBack: true,
+        title: "Thêm mới nguyên liệu",
+        backgroundColor: BusinessColors.blue,
+      ),
+      body: UnfocusWidget(
+        child: Form(
+          key: _formKey,
+          child: Container(
+            padding: defaultPadding,
+            child: Column(
+              children: [
+                Expanded(
+                  child: CreateIngredientWidget(
+                    onUpdateLoss: _onUpdateLoss,
+                    onUpdateName: _onUpdateName,
+                    onUpdatePrice: _onUpdatePrice,
+                    onUpdateWeight: _onUpdateWeight,
+                  ),
                 ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: BusinessRowButton(
-                  onTapAccept: _onCreate,
-                  contentAccept: "Thêm mới",
-                  acceptColor: BusinessColors.lightOrange,
-                  buttonSize: ButtonSize.SIZE_32,
-                ),
-              )
-            ],
+                const Spacer(),
+                SizedBox(
+                  width: double.infinity,
+                  child: BusinessRowButton(
+                    onTapAccept: _onCreate,
+                    contentAccept: "Thêm mới",
+                    acceptColor: BusinessColors.blue,
+                    buttonSize: ButtonSize.SIZE_32,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

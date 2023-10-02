@@ -23,7 +23,10 @@ class _OverviewFloatingButtonState extends State<OverviewFloatingButton> {
     context.push(BusinessPath.createProduct);
   }
 
-  void _onAddIgredient() {}
+  void _onAddIgredient() {
+    context.push(BusinessPath.createIngredient);
+  }
+
   void _onAddImportBill() {}
 
   @override
