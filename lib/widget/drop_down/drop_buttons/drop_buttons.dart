@@ -25,7 +25,7 @@ class CustomDropButtons<T> extends StatelessWidget {
   final InputBorder? errorBorder;
   final InputBorder? focusBorder;
   final TextEditingController? controller;
-  final String Function(String?)? validate;
+  final String? Function(String?)? validate;
   final SearchFieldListItem<T> Function(T) suggestions;
   final Function(SearchFieldListItem<T>)? onSuggestionTap;
 

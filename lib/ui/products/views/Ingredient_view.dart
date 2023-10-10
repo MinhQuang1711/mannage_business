@@ -5,7 +5,7 @@ import 'package:mannager_business/const/fake_data/ingredient_list.dart';
 import 'package:mannager_business/const/text_style/text_style.dart';
 import 'package:mannager_business/domains/models/detail_product/detail_product.dart';
 import 'package:mannager_business/ui/products/blocs/product_bloc.dart';
-import 'package:mannager_business/ui/products/blocs/product_event.dart';
+
 import 'package:mannager_business/ui/products/blocs/product_state.dart';
 import 'package:mannager_business/ui/products/widgets/add_ingredient_dialog.dart';
 import 'package:mannager_business/ui/products/widgets/input_ingredient.dart';
