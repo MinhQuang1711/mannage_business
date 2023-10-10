@@ -56,6 +56,7 @@ class BaseTextFields extends StatelessWidget {
       controller: controller,
       onChanged: onChanged,
       validator: validate,
+      readOnly: readOnly ?? false,
       onTap: onTap,
       decoration: InputDecoration(
         labelStyle: detailRegular,

@@ -20,18 +20,21 @@ mixin _$ProductEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String? name) getProduct,
     required TResult Function(Product product) createProduct,
+    required TResult Function(DetailProduct value) addMoreIngredient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? name)? getProduct,
     TResult? Function(Product product)? createProduct,
+    TResult? Function(DetailProduct value)? addMoreIngredient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? name)? getProduct,
     TResult Function(Product product)? createProduct,
+    TResult Function(DetailProduct value)? addMoreIngredient,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ProductEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GET_PRODUCT value) getProduct,
     required TResult Function(CREATE_PRODUCT value) createProduct,
+    required TResult Function(ADD_MORE_INGREDIENT value) addMoreIngredient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GET_PRODUCT value)? getProduct,
     TResult? Function(CREATE_PRODUCT value)? createProduct,
+    TResult? Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GET_PRODUCT value)? getProduct,
     TResult Function(CREATE_PRODUCT value)? createProduct,
+    TResult Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +146,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult when<TResult extends Object?>({
     required TResult Function(String? name) getProduct,
     required TResult Function(Product product) createProduct,
+    required TResult Function(DetailProduct value) addMoreIngredient,
   }) {
     return getProduct(name);
   }
@@ -149,6 +156,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? name)? getProduct,
     TResult? Function(Product product)? createProduct,
+    TResult? Function(DetailProduct value)? addMoreIngredient,
   }) {
     return getProduct?.call(name);
   }
@@ -158,6 +166,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? name)? getProduct,
     TResult Function(Product product)? createProduct,
+    TResult Function(DetailProduct value)? addMoreIngredient,
     required TResult orElse(),
   }) {
     if (getProduct != null) {
@@ -171,6 +180,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult map<TResult extends Object?>({
     required TResult Function(GET_PRODUCT value) getProduct,
     required TResult Function(CREATE_PRODUCT value) createProduct,
+    required TResult Function(ADD_MORE_INGREDIENT value) addMoreIngredient,
   }) {
     return getProduct(this);
   }
@@ -180,6 +190,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GET_PRODUCT value)? getProduct,
     TResult? Function(CREATE_PRODUCT value)? createProduct,
+    TResult? Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
   }) {
     return getProduct?.call(this);
   }
@@ -189,6 +200,7 @@ class _$GET_PRODUCT implements GET_PRODUCT {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GET_PRODUCT value)? getProduct,
     TResult Function(CREATE_PRODUCT value)? createProduct,
+    TResult Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
     required TResult orElse(),
   }) {
     if (getProduct != null) {
@@ -283,6 +295,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult when<TResult extends Object?>({
     required TResult Function(String? name) getProduct,
     required TResult Function(Product product) createProduct,
+    required TResult Function(DetailProduct value) addMoreIngredient,
   }) {
     return createProduct(product);
   }
@@ -292,6 +305,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? name)? getProduct,
     TResult? Function(Product product)? createProduct,
+    TResult? Function(DetailProduct value)? addMoreIngredient,
   }) {
     return createProduct?.call(product);
   }
@@ -301,6 +315,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? name)? getProduct,
     TResult Function(Product product)? createProduct,
+    TResult Function(DetailProduct value)? addMoreIngredient,
     required TResult orElse(),
   }) {
     if (createProduct != null) {
@@ -314,6 +329,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult map<TResult extends Object?>({
     required TResult Function(GET_PRODUCT value) getProduct,
     required TResult Function(CREATE_PRODUCT value) createProduct,
+    required TResult Function(ADD_MORE_INGREDIENT value) addMoreIngredient,
   }) {
     return createProduct(this);
   }
@@ -323,6 +339,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GET_PRODUCT value)? getProduct,
     TResult? Function(CREATE_PRODUCT value)? createProduct,
+    TResult? Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
   }) {
     return createProduct?.call(this);
   }
@@ -332,6 +349,7 @@ class _$CREATE_PRODUCT implements CREATE_PRODUCT {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GET_PRODUCT value)? getProduct,
     TResult Function(CREATE_PRODUCT value)? createProduct,
+    TResult Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
     required TResult orElse(),
   }) {
     if (createProduct != null) {
@@ -348,5 +366,156 @@ abstract class CREATE_PRODUCT implements ProductEvent {
   Product get product;
   @JsonKey(ignore: true)
   _$$CREATE_PRODUCTCopyWith<_$CREATE_PRODUCT> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ADD_MORE_INGREDIENTCopyWith<$Res> {
+  factory _$$ADD_MORE_INGREDIENTCopyWith(_$ADD_MORE_INGREDIENT value,
+          $Res Function(_$ADD_MORE_INGREDIENT) then) =
+      __$$ADD_MORE_INGREDIENTCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DetailProduct value});
+
+  $DetailProductCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$$ADD_MORE_INGREDIENTCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$ADD_MORE_INGREDIENT>
+    implements _$$ADD_MORE_INGREDIENTCopyWith<$Res> {
+  __$$ADD_MORE_INGREDIENTCopyWithImpl(
+      _$ADD_MORE_INGREDIENT _value, $Res Function(_$ADD_MORE_INGREDIENT) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ADD_MORE_INGREDIENT(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DetailProduct,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DetailProductCopyWith<$Res> get value {
+    return $DetailProductCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ADD_MORE_INGREDIENT implements ADD_MORE_INGREDIENT {
+  const _$ADD_MORE_INGREDIENT(this.value);
+
+  @override
+  final DetailProduct value;
+
+  @override
+  String toString() {
+    return 'ProductEvent.addMoreIngredient(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ADD_MORE_INGREDIENT &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ADD_MORE_INGREDIENTCopyWith<_$ADD_MORE_INGREDIENT> get copyWith =>
+      __$$ADD_MORE_INGREDIENTCopyWithImpl<_$ADD_MORE_INGREDIENT>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? name) getProduct,
+    required TResult Function(Product product) createProduct,
+    required TResult Function(DetailProduct value) addMoreIngredient,
+  }) {
+    return addMoreIngredient(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? name)? getProduct,
+    TResult? Function(Product product)? createProduct,
+    TResult? Function(DetailProduct value)? addMoreIngredient,
+  }) {
+    return addMoreIngredient?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? name)? getProduct,
+    TResult Function(Product product)? createProduct,
+    TResult Function(DetailProduct value)? addMoreIngredient,
+    required TResult orElse(),
+  }) {
+    if (addMoreIngredient != null) {
+      return addMoreIngredient(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GET_PRODUCT value) getProduct,
+    required TResult Function(CREATE_PRODUCT value) createProduct,
+    required TResult Function(ADD_MORE_INGREDIENT value) addMoreIngredient,
+  }) {
+    return addMoreIngredient(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GET_PRODUCT value)? getProduct,
+    TResult? Function(CREATE_PRODUCT value)? createProduct,
+    TResult? Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
+  }) {
+    return addMoreIngredient?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GET_PRODUCT value)? getProduct,
+    TResult Function(CREATE_PRODUCT value)? createProduct,
+    TResult Function(ADD_MORE_INGREDIENT value)? addMoreIngredient,
+    required TResult orElse(),
+  }) {
+    if (addMoreIngredient != null) {
+      return addMoreIngredient(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ADD_MORE_INGREDIENT implements ProductEvent {
+  const factory ADD_MORE_INGREDIENT(final DetailProduct value) =
+      _$ADD_MORE_INGREDIENT;
+
+  DetailProduct get value;
+  @JsonKey(ignore: true)
+  _$$ADD_MORE_INGREDIENTCopyWith<_$ADD_MORE_INGREDIENT> get copyWith =>
       throw _privateConstructorUsedError;
 }

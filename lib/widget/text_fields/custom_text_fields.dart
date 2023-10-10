@@ -47,9 +47,12 @@ class CustomTextField extends ITextFields {
 
   @override
   BaseTextFields underLine({
+    bool? readOnly,
     String? hintText,
     Widget? sufIcon,
+    Function(String?)? onChanged,
     required String lable,
+    TextInputType? textInputType,
     TextEditingController? controller,
     String? Function(String? p1)? validate,
   }) {
@@ -64,10 +67,13 @@ class CustomTextField extends ITextFields {
 
     return BaseTextFields(
       lable: lable,
+      readOnly: readOnly,
       sufWidget: sufIcon,
       hintText: hintText,
       validate: validate,
+      onChanged: onChanged,
       controller: controller,
+      keyboardType: textInputType,
       border: _underBorder(null),
       errorBorder: _underBorder(null),
       focusBorder: _underBorder(BusinessColors.blue),

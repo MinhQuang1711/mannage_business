@@ -31,4 +31,29 @@ extension ContextEx on BuildContext {
       lastDate: DateTime(2030),
     );
   }
+
+  Future showAnimatedDialog({required Widget dialog}) async {
+    await showGeneralDialog(
+      context: this,
+      barrierLabel: '',
+      barrierDismissible: true,
+      pageBuilder: (ctx, a1, a2) {
+        return Container();
+      },
+      transitionBuilder: (ctx, a1, a2, child) {
+        return ScaleTransition(
+          scale: Tween<double>(begin: 0, end: 1).animate(a1),
+          child: FadeTransition(
+            opacity: Tween<double>(begin: 0, end: 1).animate(a1),
+            child: Dialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6)),
+              child: dialog,
+            ),
+          ),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 150),
+    );
+  }
 }
