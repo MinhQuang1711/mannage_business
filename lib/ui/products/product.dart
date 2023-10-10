@@ -1,9 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mannager_business/const/colors/business_colors.dart';
 import 'package:mannager_business/const/enum/buttons_size/button_size.dart';
 import 'package:mannager_business/const/text_style/text_style.dart';
+import 'package:mannager_business/domains/models/detail_product/detail_product.dart';
+import 'package:mannager_business/domains/repositories/products/product_repository.dart';
+import 'package:mannager_business/ui/products/blocs/product_bloc.dart';
+import 'package:mannager_business/ui/products/blocs/product_state.dart';
 import 'package:mannager_business/ui/products/views/Ingredient_view.dart';
 import 'package:mannager_business/ui/products/views/top_bar.dart';
 import 'package:mannager_business/widget/app_bars/app_bar.dart';
@@ -15,7 +20,10 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProductPage();
+    return BlocProvider(
+      create: (context) => ProductBloc(ProductRepository()),
+      child: const ProductPage(),
+    );
   }
 }
 
@@ -28,20 +36,24 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   File? filePicked;
+  final List<DetailProduct> detailProductList = [];
 
   void _callBackUpdateIamge(File file) async {
     filePicked = file;
     setState(() {});
   }
 
-  void _onCreate() {}
+  void _onCreate() {
+    print(detailProductList);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BusinessAppbar(
+      appBar: const BusinessAppbar(
         canBack: true,
         title: "Thêm mới sản phẩm",
-        backgroundColor: BusinessColors.orange.withOpacity(0.8),
+        backgroundColor: BusinessColors.blue,
       ),
       body: UnfocusWidget(
         child: Padding(
@@ -63,13 +75,22 @@ class _ProductPageState extends State<ProductPage> {
                       "Nguyên liệu: ",
                       style: bodyBold,
                     ),
-                    const Expanded(
-                      flex: 2,
-                      child: IngredientView(),
+                    BlocListener<ProductBloc, ProductState>(
+                      listener: (context, state) => state.mapOrNull(
+                        addIngredientSuccess: (value) =>
+                            detailProductList.add(value.detailProduct),
+                      ),
+                      child: Expanded(
+                        flex: 2,
+                        child: BlocProvider.value(
+                          value: BlocProvider.of<ProductBloc>(context),
+                          child: const IngredientView(),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 50),
                     BusinessRowButton(
-                      acceptColor: BusinessColors.orange.withOpacity(0.8),
+                      acceptColor: BusinessColors.blue,
                       buttonSize: ButtonSize.SIZE_32,
                       contentAccept: "Thêm mới",
                       onTapAccept: _onCreate,

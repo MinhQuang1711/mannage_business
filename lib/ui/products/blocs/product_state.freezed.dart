@@ -23,6 +23,7 @@ mixin _$ProductState {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$ProductState {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$ProductState {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$ProductState {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$ProductState {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$ProductState {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$INIT implements INIT {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) {
     return init();
   }
@@ -145,6 +152,7 @@ class _$INIT implements INIT {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) {
     return init?.call();
   }
@@ -157,6 +165,7 @@ class _$INIT implements INIT {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -173,6 +182,7 @@ class _$INIT implements INIT {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) {
     return init(this);
   }
@@ -185,6 +195,7 @@ class _$INIT implements INIT {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) {
     return init?.call(this);
   }
@@ -197,6 +208,7 @@ class _$INIT implements INIT {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -277,6 +289,7 @@ class _$FAILURE implements FAILURE {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) {
     return failure(message);
   }
@@ -289,6 +302,7 @@ class _$FAILURE implements FAILURE {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) {
     return failure?.call(message);
   }
@@ -301,6 +315,7 @@ class _$FAILURE implements FAILURE {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -317,6 +332,7 @@ class _$FAILURE implements FAILURE {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) {
     return failure(this);
   }
@@ -329,6 +345,7 @@ class _$FAILURE implements FAILURE {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) {
     return failure?.call(this);
   }
@@ -341,6 +358,7 @@ class _$FAILURE implements FAILURE {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -400,6 +418,7 @@ class _$LOADING implements LOADING {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) {
     return loading();
   }
@@ -412,6 +431,7 @@ class _$LOADING implements LOADING {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) {
     return loading?.call();
   }
@@ -424,6 +444,7 @@ class _$LOADING implements LOADING {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -440,6 +461,7 @@ class _$LOADING implements LOADING {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) {
     return loading(this);
   }
@@ -452,6 +474,7 @@ class _$LOADING implements LOADING {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) {
     return loading?.call(this);
   }
@@ -464,6 +487,7 @@ class _$LOADING implements LOADING {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -546,6 +570,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) {
     return createSuccess(message);
   }
@@ -558,6 +583,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) {
     return createSuccess?.call(message);
   }
@@ -570,6 +596,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (createSuccess != null) {
@@ -586,6 +613,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) {
     return createSuccess(this);
   }
@@ -598,6 +626,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) {
     return createSuccess?.call(this);
   }
@@ -610,6 +639,7 @@ class _$CREATE_SUCCESS implements CREATE_SUCCESS {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (createSuccess != null) {
@@ -703,6 +733,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     required TResult Function() loading,
     required TResult Function(String message) createSuccess,
     required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
   }) {
     return getProductSuccess(list);
   }
@@ -715,6 +746,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     TResult? Function()? loading,
     TResult? Function(String message)? createSuccess,
     TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
   }) {
     return getProductSuccess?.call(list);
   }
@@ -727,6 +759,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     TResult Function()? loading,
     TResult Function(String message)? createSuccess,
     TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -743,6 +776,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     required TResult Function(LOADING value) loading,
     required TResult Function(CREATE_SUCCESS value) createSuccess,
     required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
   }) {
     return getProductSuccess(this);
   }
@@ -755,6 +789,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     TResult? Function(LOADING value)? loading,
     TResult? Function(CREATE_SUCCESS value)? createSuccess,
     TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -767,6 +802,7 @@ class _$GET_SUCCESS implements GET_SUCCESS {
     TResult Function(LOADING value)? loading,
     TResult Function(CREATE_SUCCESS value)? createSuccess,
     TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -782,5 +818,175 @@ abstract class GET_SUCCESS implements ProductState {
   List<Product> get list;
   @JsonKey(ignore: true)
   _$$GET_SUCCESSCopyWith<_$GET_SUCCESS> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$INGREDIENT_SUCCESSCopyWith<$Res> {
+  factory _$$INGREDIENT_SUCCESSCopyWith(_$INGREDIENT_SUCCESS value,
+          $Res Function(_$INGREDIENT_SUCCESS) then) =
+      __$$INGREDIENT_SUCCESSCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DetailProduct detailProduct});
+
+  $DetailProductCopyWith<$Res> get detailProduct;
+}
+
+/// @nodoc
+class __$$INGREDIENT_SUCCESSCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$INGREDIENT_SUCCESS>
+    implements _$$INGREDIENT_SUCCESSCopyWith<$Res> {
+  __$$INGREDIENT_SUCCESSCopyWithImpl(
+      _$INGREDIENT_SUCCESS _value, $Res Function(_$INGREDIENT_SUCCESS) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? detailProduct = null,
+  }) {
+    return _then(_$INGREDIENT_SUCCESS(
+      null == detailProduct
+          ? _value.detailProduct
+          : detailProduct // ignore: cast_nullable_to_non_nullable
+              as DetailProduct,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DetailProductCopyWith<$Res> get detailProduct {
+    return $DetailProductCopyWith<$Res>(_value.detailProduct, (value) {
+      return _then(_value.copyWith(detailProduct: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$INGREDIENT_SUCCESS implements INGREDIENT_SUCCESS {
+  const _$INGREDIENT_SUCCESS(this.detailProduct);
+
+  @override
+  final DetailProduct detailProduct;
+
+  @override
+  String toString() {
+    return 'ProductState.addIngredientSuccess(detailProduct: $detailProduct)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$INGREDIENT_SUCCESS &&
+            (identical(other.detailProduct, detailProduct) ||
+                other.detailProduct == detailProduct));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, detailProduct);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$INGREDIENT_SUCCESSCopyWith<_$INGREDIENT_SUCCESS> get copyWith =>
+      __$$INGREDIENT_SUCCESSCopyWithImpl<_$INGREDIENT_SUCCESS>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function(String message) failure,
+    required TResult Function() loading,
+    required TResult Function(String message) createSuccess,
+    required TResult Function(List<Product> list) getProductSuccess,
+    required TResult Function(DetailProduct detailProduct) addIngredientSuccess,
+  }) {
+    return addIngredientSuccess(detailProduct);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function(String message)? failure,
+    TResult? Function()? loading,
+    TResult? Function(String message)? createSuccess,
+    TResult? Function(List<Product> list)? getProductSuccess,
+    TResult? Function(DetailProduct detailProduct)? addIngredientSuccess,
+  }) {
+    return addIngredientSuccess?.call(detailProduct);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(String message)? failure,
+    TResult Function()? loading,
+    TResult Function(String message)? createSuccess,
+    TResult Function(List<Product> list)? getProductSuccess,
+    TResult Function(DetailProduct detailProduct)? addIngredientSuccess,
+    required TResult orElse(),
+  }) {
+    if (addIngredientSuccess != null) {
+      return addIngredientSuccess(detailProduct);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(INIT value) init,
+    required TResult Function(FAILURE value) failure,
+    required TResult Function(LOADING value) loading,
+    required TResult Function(CREATE_SUCCESS value) createSuccess,
+    required TResult Function(GET_SUCCESS value) getProductSuccess,
+    required TResult Function(INGREDIENT_SUCCESS value) addIngredientSuccess,
+  }) {
+    return addIngredientSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(INIT value)? init,
+    TResult? Function(FAILURE value)? failure,
+    TResult? Function(LOADING value)? loading,
+    TResult? Function(CREATE_SUCCESS value)? createSuccess,
+    TResult? Function(GET_SUCCESS value)? getProductSuccess,
+    TResult? Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
+  }) {
+    return addIngredientSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(INIT value)? init,
+    TResult Function(FAILURE value)? failure,
+    TResult Function(LOADING value)? loading,
+    TResult Function(CREATE_SUCCESS value)? createSuccess,
+    TResult Function(GET_SUCCESS value)? getProductSuccess,
+    TResult Function(INGREDIENT_SUCCESS value)? addIngredientSuccess,
+    required TResult orElse(),
+  }) {
+    if (addIngredientSuccess != null) {
+      return addIngredientSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class INGREDIENT_SUCCESS implements ProductState {
+  const factory INGREDIENT_SUCCESS(final DetailProduct detailProduct) =
+      _$INGREDIENT_SUCCESS;
+
+  DetailProduct get detailProduct;
+  @JsonKey(ignore: true)
+  _$$INGREDIENT_SUCCESSCopyWith<_$INGREDIENT_SUCCESS> get copyWith =>
       throw _privateConstructorUsedError;
 }

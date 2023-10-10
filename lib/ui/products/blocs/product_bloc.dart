@@ -15,6 +15,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     event.map(
       getProduct: (event) async => await _onGetProduct(event, emitter),
       createProduct: (event) async => await _onCreateProduct(event, emitter),
+      addMoreIngredient: (event) => _addMoreIngredient(event, emitter),
     );
   }
 
@@ -33,5 +34,10 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           emitter(const ProductState.createSuccess("Thêm mới thành công")),
       failure: (failure) => emitter(ProductState.failure(message: failure)),
     );
+  }
+
+  void _addMoreIngredient(ADD_MORE_INGREDIENT event, Emitter emitter) {
+    emitter(const ProductState.loading());
+    emitter(ProductState.addIngredientSuccess(event.value));
   }
 }
